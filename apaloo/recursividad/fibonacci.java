@@ -1,18 +1,20 @@
 package Recursividad;
 
 public class fibonacci {
-    public static void fibo(int n){
-        if(n==0){
-            return;
-        } 
-        int a = 0, b = 1,sum = 0;
-        a = b; 
-        b = sum;
-        sum = a+b ; 
-        System.out.println(sum);
-        fibo(n-1);
+    public static void fibo(int a, int b, int n){
+     //caso base 
+     if(n == 0){
+        return; 
     }
+    int sum = a+b; 
+    System.out.println(sum);
+    fibo(b, sum, n-1);
+    }
+    
     public static void main(String[] args) {
-        fibo(10);
+     int a = 0, b = 1;
+     System.out.println(a);
+     System.out.println(b);
+     fibo(a,b,5);  
     }
 }
