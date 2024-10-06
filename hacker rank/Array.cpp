@@ -2,20 +2,15 @@
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(false); // Asegúrate de llamar a la función 'false'
-    cin.tie(0);
-    cout.tie(0);
-
+    ios_base::sync_with_stdio(false), cin.tie(0);
     int n;
     cin >> n;
     int Array[n];
 
-    // Leer los elementos del arreglo
     for(int i = 0; i < n; i++) {
         cin >> Array[i];
     }
-
-    // Imprimir los elementos en orden inverso
+    
     for(int i = n - 1; i >= 0; i--) {
         cout << Array[i] << " ";
     }
