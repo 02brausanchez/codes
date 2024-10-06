@@ -3,19 +3,18 @@ using namespace std;
 
 void SumaInversa(){
     int n; 
-    cout << "Dame el Size del arreglo que tiene que ser par: "<<endl;
     cin >> n; 
     vector<int> Arreglo(n);
     if(n % 2 == 0){
         for (int i = 0; i < n; i++){
-            cout << "Ingresa numero " << i + 1 <<endl;
+            cout <<  i + 1 <<endl;
             cin >> Arreglo[i];
         }
         for (int i = 0; i < n/2; i++){
-            cout << "La suma de los elementos " << i+1 << " y " << n-i << " es " << Arreglo[i] + Arreglo[n-i-1] << endl;
+            cout << i+1 << n-i << Arreglo[i] + Arreglo[n-i-1] << "\n";
         }
     }else{
-        cout << "tu numero no es par"<<endl;
+        cout <<"-1"<<endl;
     }
 }
 
