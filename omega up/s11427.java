@@ -2,7 +2,6 @@ package omegaup;
 import java.util.Scanner;
 
 public class s11427 {
-
     public static int checkCharacter(String word) {
         int length = word.length();
         int count_character = 0;
