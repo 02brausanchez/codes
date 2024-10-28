@@ -25,15 +25,7 @@ public class Principal {
     }
 }
 
-
-Tengo una duda con respecto a la descripcion de este problema no se si lo estoy resolviendo de acuerdo a lo que se me pide
-directamente al usar una pila o una cola o simplemente usar un metodo especifico como es el caso de un Linked list<Intefer> ..
-Descripcion de l problema:
-Modificar la lista ligada para que en lugar de enteros almacene cadenas. Agregue el metodo clonar que tambien clone las cadenas almacenadas.
-Una lista clonada debera de tener los mismos elementos de la original, pero debera ser totalmente idenpendiente. El metodo clonar regresara
-una lista INDEPENDIENTE.
 public Lista clonar()
-El codigo que he hecho hasta el momento
 
 package ProblemSix;
 
