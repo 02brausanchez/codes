@@ -1,7 +1,7 @@
 package apanloo;
 
 public class Nodo {
-	int info; 
+    int info; 
 	Nodo sig; 
 	
 	public Nodo(int info) {

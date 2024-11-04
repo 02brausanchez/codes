@@ -1,7 +1,7 @@
 package apanloo;
 
 public class Listas {
-	static Nodo l; 
+    private  Nodo l; 
 	
 	public Listas() {
 		l = null; 
@@ -41,7 +41,7 @@ public class Listas {
 		return a; 
 	}
 	
-	public static void agregarFinalR(int info) {
+	public void agregarFinalR(int info) {
 		l = agregarFinalR(l, info);  
 	}
 	
@@ -124,7 +124,7 @@ public class Listas {
 		act.sig = ant; 
 		l = act; 
 	}
-	
+	/*
 	private Nodo invierteR(Nodo a) {
     	if (a == null || a.sig == null) {
         	return a;
@@ -137,5 +137,21 @@ public class Listas {
 
 	public void invierteR() {
     	  	l = invierteR(l);
+	}*/ 
+	private Nodo invierteR(Nodo ant, Nodo a){
+		//La sublista esta vacia
+		if(a == null) {return null;}
+		//La sublista tiene un elemento, el cual es el ultimo		
+		if(a.sig == null ){
+			a.sig = ant; 
+			return a;
+		}
+		Nodo aux = invierteR(a, a.sig);
+		a.sig = ant; 
+		return aux;  
+	}
+
+	public void invierteR(){
+		l = invierteR(null, l); 
 	}
 }

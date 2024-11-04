@@ -1,7 +1,9 @@
 package apanloo;
 
 public class Main {
+
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		Listas l = new Listas(); 
 		/*l.agregarFinalR(1);
 		l.agregarFinalR(2);
@@ -20,6 +22,6 @@ public class Main {
 
 		l.invierteR(); 
 		System.out.println("lista invertida: " + l);
-		
 	}
+
 }
