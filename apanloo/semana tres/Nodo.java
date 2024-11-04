@@ -14,6 +14,11 @@ public class Nodo {
 		return "[" + info + "]"; 
 	}
 	
+	public int compareTo(Series a) {
+		return info.compareTo(a); 
+	}
+	
+	
 	/*
 	public int compareTo(int a) {
 		//llamar al compareTo de la clase que se va a crear 

@@ -8,7 +8,7 @@ public class Listas {
 	}
 	
 	//metodo recursivo 
-	public void agregarNodoFinal(int info) {
+	public void agregarNodoFinal(Series info) {
 		if(l == null) {
 			l = new Nodo(info); 
 			return;
@@ -88,7 +88,7 @@ public class Listas {
 		aux.sig = aux2; 
 	}
 	
-	private Nodo insertaOrdenadoR(Nodo a, int info) {
+	private Nodo insertaOrdenadoR(Nodo a, Series info) {
 		//Sublista vacia  
 		if(a == null) {return new Nodo(info);}
 		
