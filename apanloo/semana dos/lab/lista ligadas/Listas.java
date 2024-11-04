@@ -125,7 +125,6 @@ public class Listas {
 		l = act; 
 	}
 	
-	// Método recursivo para invertir la lista, sin necesidad de parámetros adicionales
 	private Nodo invierteR(Nodo a) {
     	if (a == null || a.sig == null) {
         	return a;
@@ -136,7 +135,6 @@ public class Listas {
     	return aux;
 	}
 
-	// Método público para invertir la lista, que llama a la versión privada sin parámetros adicionales
 	public void invierteR() {
     	l = invierteR(l);
 	}
