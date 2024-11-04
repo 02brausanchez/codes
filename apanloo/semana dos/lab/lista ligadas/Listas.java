@@ -136,6 +136,6 @@ public class Listas {
 	}
 
 	public void invierteR() {
-    	l = invierteR(l);
+    	  	l = invierteR(l);
 	}
 }
