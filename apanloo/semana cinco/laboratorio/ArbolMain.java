@@ -2,7 +2,9 @@ package PracticaCuatro;
 
 public class ArbolMain {
     public static void main(String[] args) {
-        Arbol a = new Arbol();
+        Arbol a = new Arbol("a(b(c,d),e(f)");
+        System.out.println(a);
+
         Arbol b = new Arbol();
         a = a.ejemplo1();
         b = b.ejemplo2();

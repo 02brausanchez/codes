@@ -128,6 +128,9 @@ public class Arbol {
 
     @Override
     public String toString() {
+        if(raiz == null){
+            return "null";
+        }
         return toString(raiz);
     }
 
@@ -140,5 +143,44 @@ public class Arbol {
 
     public boolean iguales(Arbol a) {
         return iguales(raiz, a.raiz);
+    }
+
+    private Nodo strToArbol(char[]s, int [] i){
+        Nodo aux = new Nodo(s[i[0]]); //elemento 0 del arreglo
+        i[0]++;
+        if(s[i[0]] == '('){
+            i[0]++; //salta
+            if(s[i[0]] == ','){
+                i[0]++; //salta
+                aux.hder = strToArbol(s,i);
+                i[0]++; //salta
+                return aux;
+            }
+            aux.hizq = strToArbol(s,i);
+            if(s[i[0]] == ','){
+                i[0]++; //salta ,
+                aux.hder = strToArbol(s,i);
+                i[0]++;//salta )
+                return aux;
+            }
+            i[0]++; //salta )
+            return aux;
+        }
+        return aux;
+    }
+
+    public Arbol(String a){
+        if(a == null){
+            raiz = null;
+            return;
+        }
+        if(a.length() == 0){
+            raiz = null;
+            return;
+        }
+        char [] s = (a + "#").toCharArray();
+        int [] i = new int [1];
+        i[0] = 0;
+        raiz = strToArbol(s,i);
     }
 }
