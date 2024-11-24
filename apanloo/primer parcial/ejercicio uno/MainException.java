@@ -6,7 +6,7 @@ public class MainException {
     public static void main(String[] args) {
         Persona alguien = new Persona();
         try {
-            alguien.ponFechaNacimiento(new GregorianCalendar(2025, Calendar.JANUARY,1));
+            alguien.ponFechaNacimiento(new GregorianCalendar(2025, 1, 1));
         }catch (FechaException e){
             System.out.println("(Fecha) Se ha producido un error: ");
             System.out.println(e.getMessage());
@@ -18,7 +18,7 @@ public class MainException {
             System.out.println(e.getMessage());
         }
         try {
-            alguien.ponFechaNacimiento(new GregorianCalendar(2003, Calendar.FEBRUARY,28));
+            alguien.ponFechaNacimiento(new GregorianCalendar(2003, 2, 28));
             alguien.ponGenero('H');
             System.out.println(alguien);
         }catch (Exception e){
