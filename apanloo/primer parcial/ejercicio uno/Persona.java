@@ -22,7 +22,7 @@ public class Persona {
         if(genero != 'H' && genero != 'M'){
             throw new GeneroException("Caracter no valido solo se acepta 'H' y 'M' ");
         }
-        this.genero = Character.toUpperCase(genero);
+        this.genero = genero;
     }
 
     public int edad(){
