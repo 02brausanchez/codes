@@ -8,6 +8,7 @@ public class Electrico extends Instrumento{
     public void cambiarSonido(String sonido){
         System.out.println("Electrico.cambiarSonido() "+ sonido);
     }
+    @Override
     public void acompañamientosAutomaticos(String acompañamiento){
         System.out.println("Eletrico.acompañamientoAutomaticos() " + acompañamiento );
     }
