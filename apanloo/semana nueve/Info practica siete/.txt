@@ -4,4 +4,6 @@
 ejemplo: Juliet [30,10]
 4)Almacenar las palabras(sin coordenadas)en el arbol (treemap) y recorrerlo. 
 5)Agregar la lista coordenadas.
-TreeMap<String, List<Coordenada>> l 
+TreeMap<String,List<coordenada>> l 
+Salida 
+palabra(ocurrencias): [renglon, columna], [renglon2, columna2], ...[renglonN, columnaN]
