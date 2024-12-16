@@ -41,7 +41,7 @@ public class Archivo {
     public static void separaPalabras(String arch) throws FileNotFoundException, IOException{
         RandomAccessFile f = new RandomAccessFile(arch, "r");
         String s;
-        int renglon = 1, columna = 1;
+        int renglon = 0, columna = 0;
         while((s = f.readLine()) != null) {
             while(s.contains(" ")){
                 int espacio = s.indexOf(' ');
