@@ -4,3 +4,4 @@
 ejemplo: Juliet [30,10]
 4)Almacenar las palabras(sin coordenadas)en el arbol (treemap) y recorrerlo. 
 5)Agregar la lista coordenadas.
+TreeMap<String, List<Coordenada>> l 
