@@ -6,4 +6,4 @@ ejemplo: Juliet [30,10]
 5)Agregar la lista coordenadas.
 TreeMap<String,List<coordenada>> l 
 Salida 
-palabra(ocurrencias): [renglon, columna], [renglon2, columna2], ...[renglonN, columnaN]
+palabra(ocurrencias): [renglon, columna], [renglon2, columna2],..., [renglonN, columnaN]
