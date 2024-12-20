@@ -1,4 +1,4 @@
-package LeerArchivo;
+package PracticaSiete;
 
 public class Coordenada {
     int ren, col;

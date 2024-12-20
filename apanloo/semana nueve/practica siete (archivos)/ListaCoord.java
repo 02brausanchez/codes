@@ -1,5 +1,4 @@
-package LeerArchivo;
-
+package PracticaSiete;
 import java.util.LinkedList;
 import java.util.List;
 
