@@ -3,34 +3,6 @@ package Practica;
 import java.util.Arrays;
 
 public class combinarArreglos {
-    /*
-    public static int [] combinarArreglos(int [] a, int [] b){
-        //se crea el nuevo arreglo c 
-        int [] c = new int[a.length+b.length];
-        //int valorA = a.length-1;
-        //int valorB = b.length-1; 
-
-        for(int i = 0; i < a.length; i++){
-            int min = i;
-            for(int j = 0; j < b.length; j++){
-                if(a[i] <= b[j]){
-                    a[i] = a[min];
-                    a[min] = c[min];  
-                }else{
-                    b[j] = b[min]; 
-                    b[min] = c[min]; 
-                }
-                min++;
-            }
-            int aux = c[min];
-            if(aux < c[min]){
-                aux = c[aux]; 
-                c[aux] = c[i];
-            }
-        }
-        return c;
-    }
-    */
     public static void ordenarBurbuja(String[] arreglo) { 
         int n = arreglo.length; 
         for (int i = 0; i < n - 1; i++) { 
