@@ -94,11 +94,12 @@ public class Interseccion {
 
     public static void main(String[] args) {
      //Definimos los elementos 
-     //int [] a = {1,2,4,5};
-     //int [] b = {3,5,2};
-     String [] a = {"eduardo", "braulio", "Javier", "Martin", "Ximena"};
-     String [] b = {"Fabian", "Eduardo", "Lucas", "tadeo", "ximena"};
-     List<String> solucion = encuentraInterseccion(a, b);
-     System.out.println("La interseccion de a y b es: " + solucion);  
+     int [] a = {1,2,4,5};
+     int [] b = {3,5,2};
+     System.out.println("La interseccion de a y b es: " + obtenInterseccion(a, b));
+     String [] c = {"eduardo", "braulio", "Javier", "Martin", "Ximena"};
+     String [] d = {"Fabian", "Eduardo", "Lucas", "tadeo", "ximena"};
+     List<String> solucion = encuentraInterseccion(c, d);
+     System.out.println("La interseccion de c y d es: " + solucion);  
     }
 }
