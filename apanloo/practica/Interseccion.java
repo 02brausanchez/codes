@@ -22,31 +22,6 @@ public class Interseccion {
      * b = []
      * interseccion de [] // esta vacia o no hay ningun elementos
      */
-
-    /* 
-    public static int [] interseccion(int []a , int [] b){
-        int [] interseccion = new int[a.length + b.length];
-        //caso base lista vacia 
-        if(a.length == 0 || b.length == 0){return interseccion;}
-        int i,j; 
-        i = j = 0; 
-        
-        for(int primero: a){
-            a[i++] = primero;
-        }
-        for(int segundo: b){
-            b[j++] = segundo;
-        }
-        for(int k = 0; k < a.length; k++){
-            if(a[i] == b[j]){
-                a[i] = interseccion[k];
-            }
-        }
-        
-        return interseccion;
-    }
-    */
-
     public static List<Integer> obtenInterseccion(int []a, int []b){
         List<Integer> interseccion = new ArrayList<>(); 
         for(int i = 0; i < a.length; i++){
