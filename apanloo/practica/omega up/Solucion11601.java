@@ -45,32 +45,6 @@ public class Solucion11601 {
         }
     }
 
-    /*
-        Tengo una pregunta como es que funciona el metodo solver
-        sobre todo con el arreglo count como es que se cuenta correctamente si hay
-        elementos repetidos y puedes hacer un analisis profundo de este metodo paso a
-        paso.
-        Los casos que maneja de prueba son:
-        input
-        5 3
-        1 1 1 1 3
-        Descripcion de input: son 5 elementos y el valor maximo de estos es 3
-        output
-        1:4
-        2:0
-        3:1
-        Descripcion de output: se imprime 3 elemtos de los cuales 1 se repitio 4 el 2 se repitio 0 y el 3 se
-        repitio 1 vez.
-        input
-        8 5
-        3 2 3 5 3 1 1 3
-        output
-        1: 2
-        2: 1
-        3: 4
-        4: 0
-        5: 1
-     */
     static void solver(int [] elements, int n, int m){
         int [] count = new int[m+1];
         for(int i = 0; i < n; i++){
