@@ -1,0 +1,90 @@
+package ArbolHuffman;
+
+import java.io.*;
+import java.util.BitSet;
+
+public class implementacionBitSet {
+
+    private BitSet bitSet;
+    private int bitCount; // Contador para los bits añadidos.
+
+    public implementacionBitSet(String texto, String[] codigos) {
+        bitSet = new BitSet();
+        bitCount = 0;
+
+        // Recorre el texto y construye el BitSet a partir de los códigos de Huffman.
+        for (char c : texto.toCharArray()) {
+            String codigo = codigos[c];
+            for (char bit : codigo.toCharArray()) {
+                if (bit == '1') {
+                    bitSet.set(bitCount); // Establece el bit en 1.
+                }
+                bitCount++; // Incrementa el índice de bits.
+            }
+        }
+    }
+
+    public void guardarEnArchivo(String archivoSalida) throws IOException {
+        try (FileOutputStream fos = new FileOutputStream(archivoSalida);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(bitSet);
+            oos.writeInt(bitCount); // Guarda el número total de bits.
+        }
+    }
+
+    public static implementacionBitSet cargarDeArchivo(String archivoEntrada) throws IOException, ClassNotFoundException {
+        try (FileInputStream fis = new FileInputStream(archivoEntrada);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            BitSet bitSet = (BitSet) ois.readObject();
+            int bitCount = ois.readInt();
+
+            implementacionBitSet instancia = new implementacionBitSet("", new String[256]);
+            instancia.bitSet = bitSet;
+            instancia.bitCount = bitCount;
+            return instancia;
+        }
+    }
+
+    public String decodificar(String[] codigosInvertidos) {
+        StringBuilder texto = new StringBuilder();
+        int currentIndex = 0;
+
+        while (currentIndex < bitCount) {
+            StringBuilder codigoActual = new StringBuilder();
+            while (!codigosInvertidos[codigoActual.toString()] && currentIndex < bitCount) {
+                codigoActual.append(bitSet.get(currentIndex) ? '1' : '0');
+                currentIndex++;
+            }
+
+            char simbolo = (char) codigosInvertidos[codigoActual.toString()];
+            texto.append(simbolo);
+        }
+
+        return texto.toString();
+    }
+}
+
+
+public static void main(String[] args) throws IOException, ClassNotFoundException {
+    int[] frecuencia = leeTexto("/home/alumno/Documentos/Huffman/pruebaTexto.txt");
+    muestraTabla(frecuencia);
+    List<Nodo> l = genLista(frecuencia);
+    muestraLista(l);
+    Nodo huffman = genHuffman(l);
+    recorreArbol(huffman);
+
+    String[] cs = new String[256];
+    genCodigos(huffman, "", cs);
+
+    // Genera la salida comprimida con BitSet.
+    String texto = "Texto a comprimir";
+    implementacionBitSet bitSet = new implementacionBitSet(texto, cs);
+
+    // Guarda el archivo comprimido.
+    bitSet.guardarEnArchivo("archivo_comprimido.bin");
+
+    // Carga el archivo comprimido y decodifica.
+    implementacionBitSet cargado = implementacionBitSet.cargarDeArchivo("archivo_comprimido.bin");
+    String textoDecodificado = cargado.decodificar(cs);
+    System.out.println("Texto decodificado: " + textoDecodificado);
+}
