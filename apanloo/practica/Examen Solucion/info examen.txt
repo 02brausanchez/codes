@@ -1,0 +1,79 @@
+y en este otro caso: 
+r1(t)=(1,2,3)+t(2,-1,4)
+r2(s)=(3,1,0)+s(4,-2,4)
+Mi solución fue en llevarlas en sus forma paramétricas en ambos casos y después igualarlas y despejar una variable para saber el valor de s o t, pero me quedo con resultados de 7=0, 0=0,-1=s.No se como argumentar esto con que sean 
+paralelas iguales distintas o oblicuas. 
+
+Dado un arreglo de enteros cree un método que regrese verdadero si el elemento i-esimo es un múltiplo del i-1 
+para i >= 1 (Ósea, el primer elemento no es múltiplo de ninguno).
+
+La solución que no esta del todo bien planteada en la siguiente me puede explicar el porque y que mejoras se tendrían que hacer para cumplir con la descripción del problema. 
+
+
+public boolean Multiplo(int [] datos){
+boolean esMultiplo = false; 
+
+for(int i = 0; i < datos.lenghth; i++){
+ for(int j = i+1; j < datos.length; j++){
+	if(i%j == 0){return esMultiplo = true;}
+ }
+}
+return false;
+}
+
+
+dado un arreglo de nuemero haga la suma de siguiente numero y compruebe que sea igual al objetivo. 
+y cuente cuantas números son iguales al objetivo.
+Ejemplo: (1,2,3,3,1,5) objetivo = 6
+1+2 =3
+2+3=5
+3+3=6 -> 1 
+3+1=4
+1+5=6 -> 6
+
+
+
+
+método solución(int []datos, int target){
+int count = 0; 
+for(int i = 0; i < datos.length; i++){
+ for(int j=i+1; j < datos.leghth; j++){
+	if(i+j == suma){
+	 count++; 
+      }
+ }
+
+// Encuentra el entero más grande en un árbol binario de búsqueda (BST)
+private Nodo maxIterativo(Nodo raiz) {
+    if (raiz == null) {
+        return null; // El árbol está vacío
+    }
+
+    Nodo actual = raiz;
+    while (actual.hder != null) { // Sigue hacia la derecha hasta el último nodo
+        actual = actual.hder;
+    }
+    return actual; // Devuelve el nodo más a la derecha
+}
+
+// Método público para imprimir el valor máximo
+public void imprimirMaximo() {
+    Nodo max = maxIterativo(a); // `a` es la raíz del árbol
+    if (max != null) {
+        System.out.println("El número más grande es: " + max.info);
+    } else {
+        System.out.println("El árbol está vacío.");
+    }
+}
+
+Metodos a implementar: 
+Recorrer un arbol y ponerle , 
+Recorrer una lista ligada. 
+Multiplicar dos matrices.
+Acomodar un matriz. 
+
+
+
+
+
+
