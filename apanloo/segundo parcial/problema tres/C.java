@@ -1,4 +1,3 @@
-package ProgramaCuatro;
 
 public class C extends B {
     public C(int a) {
