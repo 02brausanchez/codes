@@ -17,22 +17,6 @@ public class SumaDiagonal {
         7 8 9 -> suma en diagonal: 15
      */
 
-    /*
-        renglon[i]
-        columna[j]
-        j|0 1 2
-        i|1
-         |2
-        interseccion:
-        cual es punto de [i] y [j] en el caso de 2x3
-        1:[0][0]
-        5:[1][1]
-        9:[2][2]
-        Notamos que siempre seran pares la suma de renglo[i] y columna[j]
-        una posible condicion si es cuadrada suma respecto a ren y col
-        [0][0] + [1][1] + [2][2] = 1 + 5 + 9 = 15
-
-     */
     public static int sumaDiagonalM(int [][] matriz){
         //Se tendra que recorre la matriz
         int suma = 0;
