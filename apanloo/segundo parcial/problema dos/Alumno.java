@@ -1,4 +1,3 @@
-package ProgramaDos;
 
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
