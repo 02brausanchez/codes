@@ -18,26 +18,3 @@ int main() {
     return 0;
 }
 
-
-
-/*
-#include <bits/stdc++.h>
-using namespace std; 
-
-int main(){ 
-    ios_base::sync_with_stdio;cin.tie(0);cout.tie(0);
-    int n; 
-    cin >> n; 
-    int Array[n];
-    for(int i = 0; i < n; i++){
-        cin >> Array[i]; 
-        for(int j = Array[i]-1; j > 0; j--){
-            if(Array[j] == Array[i]){
-                cout << j;
-            }
-        }
-    } 
-
-    return 0; 
-}
-*/
