@@ -52,29 +52,13 @@ public class Main {
     
     for(int i = 0; i < 10; i++){
         orquesta[i] = generarInstrumento(new java.util.Random().nextInt(5)); 
-    }
-    for(int i = 0; i < 10; i++){
-        afinarInstrumento(orquesta[i]);
-    }    
-    for(int i = 0; i < 10; i++){
+        afinarInstrumento(orquesta[i]);   
         tocarInstrumento(orquesta[i]);
-    }
-    for(int i = 0; i < 10; i++){
         tocarInstrumento(orquesta[i],notas[i%7]);
-    }
-    
-    for(int j = 0; j < 10; j++){
-        sintetizador[j] = generarInstrumento(new java.util.Random().nextInt(5)); 
-    }
-    for(int j = 0; j < 10; j++){
-        cambiarSonido(sintetizador[j],cambiarSonidos[j%3]);
-    }
-    for(int j = 0; j < 10; j++){
-        acompañamientosAutomaticos(sintetizador[j],acompañamientosAutomaticos[j%3]);
-    }
-    for(int j = 0; j < 10; j++){
-        grabarYReproducirMusica(sintetizador[j],reproducirMusica[j%5]);
-    }
+        sintetizador[i] = generarInstrumento(new java.util.Random().nextInt(5)); 
+        cambiarSonido(sintetizador[i],cambiarSonidos[i%3]);
+        acompañamientosAutomaticos(sintetizador[i],acompañamientosAutomaticos[i%3]);
+        grabarYReproducirMusica(sintetizador[i],reproducirMusica[i%5]);
     
     }
 }
