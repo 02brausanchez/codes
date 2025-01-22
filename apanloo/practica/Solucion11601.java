@@ -1,98 +1,97 @@
-package OmegaUp;
+package Practica;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 
 public class Solucion11601 {
-   static class FastReader {
-    BufferedReader br;
-    StringTokenizer st;
+    static class FastReader {
+        BufferedReader br;
+        StringTokenizer st;
 
-    public FastReader() {
-        br = new BufferedReader(new InputStreamReader(System.in));
-    }
-
-    String next() {
-        while (st == null || !st.hasMoreElements()) {
-            try {
-                String line = br.readLine();
-                if (line == null) {
-                    throw new NoSuchElementException("No more tokens available in input.");
+        public FastReader() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+        String next(){
+            while(st == null || !st.hasMoreElements()){
+                try{
+                    String line = br.readLine();
+                    if(line == null){
+                        throw new NoSuchElementException("No more tokens available in input.");
+                    }
+                    st = new StringTokenizer(line);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    throw new NoSuchElementException("Error reading input.");
                 }
-                st = new StringTokenizer(line);
+            }
+            return st.nextToken();
+        }
+
+        int nextInt(){return Integer.parseInt(next());}
+        long nextLong(){return Long.parseLong(next());}
+        double nextDouble(){return Double.parseDouble(next());}
+
+        String nextLine(){
+            String str = "";
+            try{
+                str = br.readLine();
             } catch (IOException e) {
                 e.printStackTrace();
-                throw new NoSuchElementException("Error reading input.");
             }
+            return str;
         }
-        return st.nextToken();
     }
 
-    int nextInt() {
-        return Integer.parseInt(next());
-    }
-
-    long nextLong() {
-        return Long.parseLong(next());
-    }
-
-    double nextDouble() {
-        return Double.parseDouble(next());
-    }
-
-    String nextLine() {
-        String str = "";
-        try {
-            str = br.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return str;
-    }
-   }
-
-    
-    public static void solucion(int [] elementos, int n, int m){
-        int [] contador = new int[m + 1]; 
-        
+    /*
+        Tengo una pregunta como es que funciona el metodo solver
+        sobre todo con el arreglo count como es que se cuenta correctamente si hay
+        elementos repetidos y puedes hacer un analisis profundo de este metodo paso a
+        paso.
+        Los casos que maneja de prueba son:
+        input
+        5 3
+        1 1 1 1 3
+        Descripcion de input: son 5 elementos y el valor maximo de estos es 3
+        output
+        1:4
+        2:0
+        3:1
+        Descripcion de output: se imprime 3 elemtos de los cuales 1 se repitio 4 el 2 se repitio 0 y el 3 se
+        repitio 1 vez.
+        input
+        8 5
+        3 2 3 5 3 1 1 3
+        output
+        1: 2
+        2: 1
+        3: 4
+        4: 0
+        5: 1
+     */
+    static void solver(int [] elements, int n, int m){
+        int [] count = new int[m+1];
         for(int i = 0; i < n; i++){
-            contador[elementos[i]]++; 
+            count[elements[i]]++;
         }
-
         for(int i = 1; i <= m; i++){
-            System.out.println(i + ": " + contador[i]);
+            System.out.println(i + ": " + count[i]);
         }
     }
 
     public static void main(String[] args) {
-        /*
-        FastReader sc = new FastReader(); 
-        int n = sc.nextInt(); 
-        int k = sc.nextInt(); 
-        int count = 0; 
-        while(n --> 0){
-            int x = sc.nextInt(); 
-            if(x % k == 0){count++;}
-        }
-        System.out.println(count);*/
-        
-        // Comparacion entre FastReader y Scanner 
         FastReader sc = new FastReader();
-
-        int num,m; 
-        num = sc.nextInt(); //Cantidad de pelotas que hay
-        m = sc.nextInt(); //El numero mayor que se puede encontrar 
-
-        int [] elementos = new int[num]; //cantidad maxima que tendra
         
-        for(int i = 0; i < num; i++){
-            elementos[i] = sc.nextInt();
-        }
+        int n = sc.nextInt();
+        int m = sc.nextInt();
 
-        solucion(elementos,num,m);             
+        int [] elements = new int[n];
+
+        for(int i = 0; i < n; i++){
+            elements[i] = sc.nextInt();
+        }
+        solver(elements,n,m);
     }
 }
