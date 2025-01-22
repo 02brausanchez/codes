@@ -79,6 +79,69 @@ class Arbol{
         }
         return aux;
     }
+
+    
+    private Nodo minimo(Nodo a) {
+        if(a == null){return null;}
+        
+        Nodo minHizq = minimo(a.hizq);
+        Nodo minHder = minimo(a.hder);
+        
+        Nodo min = a;
+        
+        if (minHizq != null && minHizq.info < min.info) {
+            min = minHizq;
+        }
+        if (minHder != null && minHder.info < min.info) {
+            min = minHder;
+        }
+        return min;
+    }
+    
+    public void minimo() {
+        Nodo nodominimo = minimo(raiz);
+        if (nodominimo != null) {
+            System.out.println("El valor minimo es: " + nodominimo.info);
+        } else {
+            System.out.println("El arbol esta vacio");
+        }
+    }
+
+    private Nodo encuentraMax(Nodo a) {
+        if (a == null) {
+            return null;
+        }
+        Queue<Nodo> queue = new LinkedList<>();
+        queue.add(a);
+    
+        Nodo max = a;
+        while (!queue.isEmpty()) {
+            Nodo aux = queue.poll();
+            if (aux.hizq != null && aux.hizq.info > max.info) {
+                max = aux.hder;
+            }
+            if (aux.hder != null && aux.hder.info > max.info) {
+                max = aux.hder;
+            }
+
+            if (aux.hizq != null) {
+                queue.add(aux.hizq);
+            }
+            if (aux.hder != null) {
+                queue.add(aux.hder);
+            }
+        }
+        return max;
+    }
+    
+    public void encuentraMax() {
+        Nodo max = encuentraMax(raiz);
+        if (max != null) {
+            System.out.println("El valor maximo es: " + max.info);
+        } else {
+            System.out.println("El arbol esta vacio");
+        }
+    }
 }
 
 public class Soluciones {
