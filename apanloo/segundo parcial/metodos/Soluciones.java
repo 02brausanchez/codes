@@ -36,7 +36,7 @@ class Arbol{
         return aux;
     }
 
-    //Metodo para recorrer un arbol y ponerle una coma, despues de cada elemento
+    //Metodo para recorrer un arbol en Inorden y ponerle una coma, despues de cada elemento
     private String recorreArbol(Nodo a){
         if(a == null){
             return "";
@@ -55,7 +55,7 @@ class Arbol{
         return recorreArbol(raiz);
     }
 
-    //version mejorada con usando lista
+    //version mejorada usando una lista
     public String visitaxNivel2(){
         String aux = "";
         List<Nodo> l = new LinkedList<>();
