@@ -1,8 +1,3 @@
-/******************************************************************************************
- Este programa procesa datos electorales para el puesto de presidencia. Imprime el nombre de 
- cada candidato y los votos que recibieron. También se imprime el nombre del ganador. 
-*/
-
 #include <bits/stdc++.h>
 #include <fstream>
 #include <iomanip>
